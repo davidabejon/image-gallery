@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.gallery {
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+}
+
+.image {
+    position: absolute;
+    width: 50vmin;
+    transform: translate(-50%, -50%);
+}
+
+.image[data-status="inactive"] {
+    display: none;
+}
+
+.image[data-status="active"] {
+    display: block;
+}
+
+.separator {
+    margin-top: 1000px;
+}
+
+.zoomed-images {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.zoomed {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 100vmin;
+    display: none;
+    opacity: 1;
+
+    transition: opacity 1s;
+}
+
+.visible {
+    display: block;
+}
+
+.fade {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    transition: opacity 1s, transform 2s;
+}
