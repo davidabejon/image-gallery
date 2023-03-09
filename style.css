@@ -138,3 +138,9 @@ body {
     transform: translate(-50%, -50%) scale(0.4);
     transition: opacity 1s, transform 2s;
 }
+
+.fade-zoomed {
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 1s, transform 2s;
+}

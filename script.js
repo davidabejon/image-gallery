@@ -64,6 +64,7 @@ window.onclick = e => {
 
     for (let i = 0; i < images.length; i++) {
         images[i].classList.toggle("fade");
+        zoomedImages[i].classList.toggle("fade-zoomed");
     }
 
     for (let i = 0; i < zoomedImages.length; i++) {
@@ -77,7 +78,7 @@ window.onclick = e => {
     if (zoomed) {
         setTimeout(goDown, 1000);
     } else {
-        window.scroll(0, 0);
+        setTimeout(window.scroll, 1000, 0, 0);
     }
     
 };
