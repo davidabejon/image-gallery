@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
 body {
     margin: 0;
     background-color: #000;
@@ -10,10 +12,92 @@ body {
     height: 100vh;
 }
 
+.loading-screen {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding-top: 48vh;
+    padding-bottom: 48vh;
+    background: #000;
+    z-index: 100;
+    color: white;
+    font-size: 50px;
+    font-family: 'Roboto Mono', monospace;
+    animation: linear 5s loading-animation;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes loading-animation {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+        top: 0px;
+    }
+    100% {
+        position: absolute;
+        top: -100vh;
+    }
+}
+
+.letters {
+    background-image: linear-gradient(to right, rgb(55, 55, 55), rgb(165, 165, 165), rgb(55, 55, 55));
+    background-size: 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: linear 4s letters-animation infinite;
+}
+
+@keyframes letters-animation {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+.dots .dot {
+    position: relative;
+    
+    animation: dot-animation .6s ease-out alternate infinite;
+}
+
+.dots .dot:nth-child(2) {
+    left: -10px;
+    animation-delay: .2s;
+}
+.dots .dot:nth-child(3) {
+    left: -20px;
+    animation-delay: .4s;
+}
+
+@keyframes dot-animation {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -15px;
+    }
+}
+
 .image {
     position: absolute;
     width: 50vmin;
     transform: translate(-50%, -50%);
+}
+
+.image:hover {
+    cursor: pointer;
 }
 
 .image[data-status="inactive"] {

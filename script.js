@@ -1,3 +1,4 @@
+const initialTime = new Date().getTime();
 const images = document.getElementsByClassName("image");
 const zoomedImages = document.getElementsByClassName("zoomed");
 const down = document.getElementById("down");
@@ -24,8 +25,10 @@ let zoomed = false;
 
 const handleOnMove = e => {
 
-    if (!zoomed) {
-        if(distanceFromLast(e.clientX, e.clientY) > 200) {
+    let timePassed = (new Date().getTime() - initialTime) / 1000;
+
+    if (timePassed > 5 && !zoomed) {
+        if(distanceFromLast(e.clientX, e.clientY) > 170) {
             nextImage = images[index % images.length];
             const lastImage = images[(index - 5) % images.length];
     
